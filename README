@@ -1,0 +1,27 @@
+Delete Nodes
+
+Given the root of a binary tree, each node in the tree has a distinct value.
+After deleting all nodes with a value in to_delete, we are left with a forest (a disjoint union of trees).
+Return the roots of the trees in the remaining forest.  You may return the result in any order.
+
+Example 1:
+
+Input: root = [1,2,3,4,5,6,7], to_delete = [3,5]
+Output: [[1,2,null,4],[6],[7]]
+
+Solution:
+
+1. Preorder Traverssal of Tree:
+  * Visit root
+  * Traverse the left subtree
+  * Traverse the right subtree
+
+2. If root is nil return
+3. If the value of root is included in to_delete array:
+   * set the pointer to nil
+   * set append flag to true
+   Else
+   * if append flag is true append root to ans
+4. DFS(root.left)
+5. DFS(root.right)
+
